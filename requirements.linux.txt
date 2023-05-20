@@ -1,0 +1,4 @@
+tensorflow
+flask
+flask-http-middleware
+Pillow

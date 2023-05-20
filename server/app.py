@@ -1,5 +1,4 @@
 import os
-from dotenv import load_dotenv
 from flask import Flask
 from flask_http_middleware import MiddlewareManager
 from model.model import HandWrittenModel
@@ -21,12 +20,11 @@ def initServer(model):
     return app
 
 if __name__ == "__main__":
-    load_dotenv()
     try:
         handWrittenDigits = HandWrittenModel()
         handWrittenDigits.createModel()
     except Exception as error:
         print("Error with model: ", error)
     app = initServer(handWrittenDigits)
-    api_port = os.getenv('PORT')
-    app.run(host='0.0.0.0', port=api_port if api_port else 8080, debug=True, use_reloader=False)
+    api_port = 8080
+    app.run(host='0.0.0.0', port=api_port, debug=True, use_reloader=False)
