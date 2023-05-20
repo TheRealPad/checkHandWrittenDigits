@@ -27,10 +27,21 @@ I use the adam algorithm for the optimizer and sparse_categorical_crossentropy f
 You can install dependencies with the following command :
 
 ```bash
-pip install -r requirements.txt
+pip install -r requirements{.linux | .macos}.txt
 ```
 
 and run the server :
 ```bash
 python server/app.py
 ```
+
+Or you can use docker :
+
+```bash
+docker build -t image-name
+
+docker run -p PORT:PORT image-name
+```
+## routes
+
+```/analyseImage``` : take one image in the body and return the result : ```{"analyse": "result"}```
