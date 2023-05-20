@@ -1,0 +1,4 @@
+Flask
+flask-http-middleware
+tensorflow-metal == 0.5.0
+tensorflow-macos == 2.9
